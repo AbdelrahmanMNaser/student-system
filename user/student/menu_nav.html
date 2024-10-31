@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <?php
+  // Dynamically determine the base path based on server variables
+  $base_path =  (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' 
+  ? "https" : "http") . "://$_SERVER[HTTP_HOST]/" . 
+  basename(dirname(__DIR__)) . "/student" ;
+  ?>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg nav-bg position-sticky top-0 z-3 text-secondary p-0 pt-0" id="navv">
+    <div class="container-fluid">
+      <a class="navbar-brand  text-secondary nav-title ps-4  fw-medium p-2 pt-3" href="#">
+        <img class="w-fixed text-black" src="/images/university.gif" alt="logo">
+        <span class=" position-absolute" style="top:35px;">
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse pt-2" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto pe-4">
+          <li class="nav-item">
+            <a class="nav-link text-uppercase  text-secondary text-bold ps-3" href="<?php echo $base_path ?>/home.php"> <i
+                class="fas fa-house fa-fw me-1"></i>home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link1 text-decoration-none d-block dropdown-toggle text-uppercase  text-secondary ps-3"
+              href="#courses" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              courses
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item text-capitalize fs-small fw-semibold text-muted"
+                  href="<?php echo $base_path ?>/course/view.php">View</a></li>
+              <li><a class="dropdown-item text-capitalize fs-small fw-semibold text-muted"
+                  href="<?php echo $base_path ?>/course/enroll.php">Enroll</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown student-s">
+            <a class="nav-link1 text-decoration-none d-block dropdown-toggle text-uppercase  text-secondary ps-3"
+              href="#schdeule" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              schedule
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item text-capitalize fs-small fw-semibold text-muted" 
+                href="<?php echo $base_path ?>/schedule/class.php">
+                  lecture
+                </a>
+              </li>
+
+              <li class="nav-item dropend">
+                <a class=" fw-bold ms-2 nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Exams
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="<?php echo $base_path ?>/schedule/exam-midterm.php">Mid-term
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="<?php echo $base_path ?>/schedule/exam-final.php">Final</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <a class="dropdown-item text-capitalize fs-small fw-semibold text-muted"
+                  href="schedule_project.php">Projects
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-uppercase  text-secondary text-bold ps-3" href="<?php echo $base_path ?>/grades.php">GRADES</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<main ng-controller="crsView" class="mx-auto admin text-center min-vh-100 py-5 px-3">
+
+  <header class="mb-5">
+    <h2 class=" f-header fs-1 fw-bold text-white">View Courses</h2>
+  </header>
+
+  <div class="row mb-3" ng-include="'/template/table_header.html'" ng-init="itemName='Course'; addLink='/course/add'">
+  </div>
+  <div class="table-responsive">
+    <table class="table table-light table-bordered table-striped table-sm">
+      <thead>
+        <th ng-repeat="option in headerOptions" ng-click="sortData(option.value)">
+          {{ option.label }}
+          <div ng-class="getSortClass(option.value)"></div>
+        </th>
+        <th colspan="2">Actions</th>
+      </thead>
+      <tbody>
+        <tr ng-if="courses.length == 0">
+          <td colspan="7">No courses found</td>
+        </tr>
+        <tr
+          dir-paginate="course in courses | filter:customFilter | orderBy:sortColumn:reverseSort | itemsPerPage: numitems"
+          current-page="currentPage" track by $index>
+          <td>{{ ($index + 1) + (currentPage - 1) * numitems }}</td>
+          <td>{{ course.id }}</td>
+          <td>{{ course.name }}</td>
+          <td>{{ course.credit }}</td>
+          <td>
+            <ul style="margin: 0;" ng-if="course.pre_requisites">
+              <li ng-repeat="pre in course.pre_requisites.split(',')">
+                {{ pre }}
+              </li>
+            </ul>
+            <p ng-if="!course.pre_requisites">-</p>
+          </td>
+          <td>{{ course.description }}</td>
+          <td>
+            <button type="button" class="btn btn-warning" ng-click="editCourse(course)">
+              <i class="fas fa-edit"></i>
+            </button>
+          </td>
+          <td>
+            <button type="submit" class="btn btn-danger" ng-click="deleteCourse(course)">
+              <i class="fas fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Pagination -->
+  <div class="pagination-container float-end">
+    <!-- Items per page -->
+    <label class="text-white" for="numitems">Items per page:</label>
+    <select ng-model="numitems">
+      <option>2</option>
+      <option selected>5</option>
+      <option>10</option>
+      <option>25</option>
+      <option>50</option>
+      <option>100</option>
+    </select>
+    <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true"
+      template-url="/template/pagination.tpl.html"></dir-pagination-controls>
+  </div>
+</main>

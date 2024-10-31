@@ -1,0 +1,53 @@
+<main ng-if="!identity.email" class="carousel home min-vh-100 ">
+  <div id="slider" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#slider" data-bs-slide-to="0" class="active border-0 bg-transparent"
+        aria-current="true" aria-label="Slide 1">
+        <div style="width:10px; height:10px; border-radius:50%; background-color:white;"></div>
+      </button>
+      <button type="button" data-bs-target="#slider" data-bs-slide-to="1" aria-label="Slide 2"
+        class="border-0 bg-transparent">
+        <div style="width:10px; height:10px; border-radius:50%; background-color:white;"></div>
+      </button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="c-item-1">
+          <div class="col-md-6 ftco-animate px-5">
+            <h1 class="mb-4 text-white">Education Needs Complete Solution</h1>
+            <p class="text-white">
+              Our web app is a one-stop solution, making education interactive and accessible for everyone.
+            </p>
+            <p>
+              <a href="contact_us.html" class="btn button-home rounded-pill px-4 py-3 mt-3">Contact Us</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="c-item-2">
+          <div class="col-md-6 ftco-animate px-5">
+            <h1 class="mb-4 text-white">Education Needs Complete Solution</h1>
+            <p class="text-white">
+              Our web app is a one-stop solution, making education interactive and accessible for everyone.
+            </p>
+            <p>
+              <a href="contact_us.html" class="btn button-home rounded-pill px-4 py-3 mt-3">Contact Us</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+</main> 
+
+<main ng-if="identity.email" class="min-vh-100 home-student">
+  <div class="container">
+    <div class=" row align-items-center justify-content-center">
+      <div class="col-md-12 text-center ftco-animate px-5">
+        <h1 class=" mb-4 text-white">
+          Welcome, {{ identity.title }} {{ identity.first_name }}
+        </h1>
+      </div>
+    </div>
+  </div>
+</main>

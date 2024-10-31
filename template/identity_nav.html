@@ -1,0 +1,25 @@
+<div ng-controller="identityCtrl" class="bg-dark w-100 d-flex px-2 justify-content-between align-items-center">
+  <div></div>
+  <div class="text-white fs-6">
+    <ul class="nav pe-4" style="list-style-type: none;">
+      <li style="margin-right: 150px; cursor: pointer;" class="nav-item dropdown">
+        <i class="fa-solid fa-circle-user"></i>
+        <span style="margin-left: 10px;">Hi, {{ identity.first_name || 'Guest' }} </span>
+        <ul class="dropdown-menu text-white" style="background-color: black; text-align: center;">
+          <li>
+            <a class="text-white text-decoration-none" ng-href="/login" ng-if="!identity.email">Login</a>
+          </li>
+          <li class="text-info" ng-if="identity.email">
+            {{ identity.email }}
+          </li>
+          <li ng-if="identity.email">
+            <a class="text-white text-decoration-none" ng-href="/account">Account</a>
+          </li>
+          <li ng-if="identity.email">
+            <a class="text-white text-decoration-none" ng-click="logout()">Logout</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>

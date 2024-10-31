@@ -1,0 +1,44 @@
+<div class="login-page" >
+  <div class="heading">
+    <h2>Faculty Of Science</h2>
+    <hr>
+  </div>
+  <section ng-controller="loginCtrl">
+    <div class="form-box">
+      <div class="form-value">
+        <h2 id="s"> Login</h2>
+        <form ng-if="!user.isVerified" ng-submit="submitEmail()">
+          <div class="adj-select">
+            <p>Login As :</p>
+            <select name="role" id="role" class="form-select custom-radio-select" ng-model="user.role"
+              ng-change="showRegisterOption()" required>
+              <option value="" disabled selected>select role</option>
+              <option value="admin">Admin</option>
+              <option value="professor">Professor</option>
+              <option value="student">Student</option>
+            </select>
+          </div>
+          <div class="inputbox">
+            <ion-icon name="person-outline"></ion-icon>
+            <input id="email" name="email" type="text" ng-model="user.email" required>
+            <label for="email">Email</label>
+          </div>
+          <button class="submit-button" type="submit">Next</button>
+        </form>
+        <form ng-if="user.isVerified" ng-submit="submitPassword()">
+          <div class='inputbox'>
+            <ion-icon name='lock-closed-outline'></ion-icon>
+            <input id='pass' name='password' type='password' ng-model="user.password" required>
+            <label for='pass'> Password</label>
+          </div>
+          <input class="submit-button" type="submit" value="Login">
+        </form>
+        <div class="register" ng-show="showRegister">
+          <p> Don't have an account?
+            <a ng-href="/signup.html">Signup</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="/assets/js/update_link.js"></script>
+  <script>
+    updateLinks("professor");
+  </script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg nav-bg position-sticky top-0 z-3 text-secondary p-0 pt-0" id="navv">
+    <div class="container-fluid">
+      <a class="navbar-brand text-secondary nav-title ps-4 fw-medium p-2 pt-3" href="#">
+        <img class="w-fixed text-black" src="/assets/images/university.gif" alt="logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse pt-2" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto pe-4">
+          <li class="nav-item">
+            <a class="nav-link text-uppercase text-secondary text-bold ps-3" href="/home.php">
+              <i class="fas fa-house fa-fw me-1"></i>home
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link1 text-decoration-none d-block dropdown-toggle text-uppercase text-secondary ps-3"
+              href="#courses" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              COURSES
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item text-capitalize fs-small fw-semibold text-muted" href="/course/view.php">
+                  View
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item text-capitalize fs-small fw-semibold text-muted" href="/course/assessment.php">
+                  Assessment
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown student-s">
+            <a class="nav-link1 text-decoration-none d-block dropdown-toggle text-uppercase text-secondary ps-3"
+              href="#courses" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              SCHEDULE
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item text-capitalize fs-small fw-semibold text-muted" href="/schedule/class.php">
+                  Class
+                </a>
+              </li>
+              <li class="nav-item dropdown professorsubdrop">
+                <a class="fw-bold ms-2 nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Assessments
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="/schedule/exam-midterm.php">
+                      Mid-term
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/schedule/exam-final.php">
+                      Final
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="myApp" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/index.css">  
+  <link rel="stylesheet" href="assets/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/login.css">
+  <link rel="icon" href="/assets/images/university.png" type="x-icon">
+  <title>Main Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet"> -->
+
+  <base href="/">
+
+  <script src="/libs/sweetalert.min.js"></script>
+  <script src="/libs/angular.min.js"></script>
+  <script src="/libs/angular-route.min.js"></script>  
+  <script src="/libs/dirPagination.js"></script>
+  <script src="/libs/bootstrap.bundle.min.js"></script>
+
+  <script src="/app/identityService.js"></script>
+  <script src="/app/config.js"></script>  
+  <script src="/app/apiService.js"></script>
+  <script src="/app/constants.js"></script>
+  <script src="/app/utils.js"></script>  
+
+  <script src="/assets/js/confirmation_alert.js"></script>  
+  <script src="/assets/js/customized_alert.js"></script>
+
+  <script src="/app/controllers/MainController.js"></script>
+  <script src="/app/controllers/LoginController.js"></script>
+  <script src="/app/controllers/AdminControllers.js"></script>
+
+</head>
+
+<body ng-controller="mainCtrl">
+
+  <div id="identity_nav"></div>
+  <div ng-include src="'/template/menu_nav.html'"></div>
+
+  <ng-view></ng-view>    
+  
+  <script src="/app/controllers/IdentityController.js"></script>
+
+  <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" type="module"></script>
+  <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" nomodule></script>
+
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<div class="heading">
+  <h2> </h2>
+  <hr>
+</div>
+<main>
+  <div class="form-box form-group">
+
+    <form method="post" id="register" action="signup-logic.php">
+      <h2 style="color: white;"> Create Account</h2>
+
+      <div class="row g-2 mb-3" style="margin-bottom: 10px;">
+        <div class="inputbox col-md-5">
+          <ion-icon name="person-outline"></ion-icon>
+          <input id="fname" name="fname" type="text" required>
+          <label for="fname">First Name</label>
+        </div>
+        <div class="inputbox col-md-5 ms-auto">
+          <ion-icon name="person-outline"></ion-icon>
+          <input id="lname" name="lname" type="text" required>
+          <label for="lname">Last Name</label>
+        </div>
+      </div>
+
+      <!-- Gender and Birth Date -->
+      <div class="row g-2 mb-3 text-center text-white">
+        <div class="col-md-6">
+          <label for="gender" class="form-label">Gender</label>
+          <select name="gender" id="gender" class="form-select text-center text-white"
+            style="background: transparent; border: 0 0 1px 0" required>
+            <option value="" disabled selected>select gender</option>
+            <option value="Male" style="color: black;">Male</option>
+            <option value="Female" style="color: black;">Female</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label for="bdate" class="form-label">Birth Date:</label>
+          <input type="date" class="form-control text-center text-white" name="bdate" id="bdate"
+            style="background: transparent;" required>
+        </div>
+      </div>
+
+      <!-- City and Street -->
+      <div class="row g-2 mb-3" style="margin-bottom: 10px;">
+        <div class="inputbox col-md-5">
+          <ion-icon name="location-outline"></ion-icon>
+          <input id="city" name="city" type="text" required>
+          <label for="city">City:</label>
+        </div>
+        <div class="inputbox col-md-5 ms-auto">
+          <ion-icon name="home-outline"></ion-icon>
+          <input id="street" name="street" type="text" required>
+          <label for="street">Street</label>
+        </div>
+
+      </div>
+
+      <script src="/assets/js/phone_input.js"></script>
+
+      <!-- Add phone number input area -->
+      <div id="inputArea" class="row g-2 mb-3" style="color: white;">
+        <!-- Phone number inputs will be added here -->
+      </div>
+      <p style="color: blue; cursor: pointer;" onclick="addPhoneNumberInput()">Add Phone Numbers</p>
+
+      <!-- E-mail -->
+      <div class="inputbox mb-3" style="width: 500px;">
+        <ion-icon name="mail-outline"></ion-icon>
+        <input type="email" id="email" name="email" required>
+        <label for="">E-mail </label>
+      </div>
+
+      <!-- Password -->
+      <div class="row g-2 mb-3">
+        <div class="inputbox col-md-5">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <input type="password" id="psw" name="password" required>
+          <label for="">Password </label>
+        </div>
+        <div class="inputbox col-md-5 ms-auto">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <input type="password" id="psw-conf" required>
+          <label for=""> Confirm Password</label>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="text-center">
+        <input type="submit" class="btn btn-primary" name="new_admin" value="Signup">
+      </div>
+
+    </form>
+  </div>
+  <script type="text/javascript">
+    document.getElementById('register').addEventListener('submit', function (event) {
+      var pas1 = document.getElementById('psw').value;
+      var pas2 = document.getElementById('psw-conf').value;
+
+      if (pas1 === '' || pas2 === '') {
+        alert("Please fill out both password fields.");
+        event.preventDefault(); // Prevent form submission
+      } else if (pas1 !== pas2) {
+        alert("The two passwords do not match.");
+        event.preventDefault(); // Prevent form submission
+      }
+    });
+
+  </script>
+</main>

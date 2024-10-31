@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html ng-app="myApp" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Departments - Add</title>
+
+  <base href="/user/admin/">
+  <link rel="shortcut icon" href="/assets/images/university.png" type="image/x-icon">
+  <script src="/assets/js/sweetalert.min.js"></script>
+  <script src="/assets/js/confirmation_alert.js"></script>
+  <script src="/assets/js/customized_alert.js"></script>
+  <script src="/assets/js/angular.min.js"></script>
+  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/config.js"></script>
+  <script src="/assets/js/apiService.js"></script>
+  <script src="/assets/js/dirPagination.js"></script>
+</head>
+
+<body ng-controller="deptCtrl">
+
+  <div id="identity_nav"></div>
+  <div id="nav-placeholder"></div>
+
+  <main class="mx-auto grades text-center min-vh-100 py-5 px-3">
+    <header class="header-adj2 mb-5">
+      <h2 class="f-header fs-1 fw-bold text-white">{{editMode ? 'Edit Department' : 'Add Department'}}</h2>
+    </header>
+
+    <div class="container">
+      <div class="row align-items-center justify-content-center">
+        <form ng-submit="submitForm()" class="form-group col-md-6 bg-dark text-white p-5 rounded">
+          <div class="col mb-3">
+            <label for="name" class="form-label">Department Name</label>
+            <input type="text" class="form-control text-center" ng-model="department.name" name="name" id="name" required>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary">{{editMode ? 'Edit Department' : 'Add Department'}}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    app.controller("deptCtrl", function ($scope, $http, apiService, $compile, $rootScope) {
+      loadNav("/includes/identity_nav.html", "identity_nav", $http, $compile, $scope);
+      loadNav("/user/admin/menu_nav.html", "nav-placeholder", $http, $compile, $rootScope);
+
+
+      $scope.department = {};
+
+      // Check if we are in edit mode
+      var deptToEdit = localStorage.getItem('deptToEdit');
+      if (deptToEdit) {
+        $scope.editMode = true;
+        $scope.department = JSON.parse(deptToEdit);
+
+        console.log($scope.department);
+        
+        localStorage.removeItem('deptToEdit');
+      } else {
+        $scope.editMode = false;
+        $scope.department = {};
+      }
+
+      $scope.submitForm = function () {
+        var method = $scope.editMode ? 'updateData' : 'insertData';
+        apiService[method]('admin.department', $scope.department)
+          .then(function (response) {
+            alert(response.data.message);
+            if (response.data.success) {
+              var redirectUrl = $scope.editMode ? 'department/?edit=true' : 'department/';
+              window.location.href = redirectUrl;
+            } else {
+              alert('Error: ' + response.data.message);
+            }
+          });
+      };
+    });
+  </script>
+
+</body>
+
+</html>

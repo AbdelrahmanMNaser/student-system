@@ -1,0 +1,341 @@
+body {
+  margin: 0;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: #0078ff;
+  --secondary-color: #CDE1F8;
+}
+
+/* ///////////////////////////Navbar////////////////// */
+.nav-bg {
+  background-color: white;
+}
+
+.navbar .nav-link {
+  position: relative;
+
+}
+
+.nav-link1 {
+  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+}
+
+.w-fixed {
+  width: 60px;
+}
+
+.dropdown:hover>.dropdown-menu,
+.dropend:hover>.dropdown-menu {
+  display: block;
+  margin-top: .125em;
+}
+
+.professorsubdrop:hover>.dropdown-menu {
+  position: absolute;
+  left: 35%;
+}
+
+.dropend:hover>.dropdown-menu {
+  position: absolute;
+  top: 0;
+  left: 85%;
+}
+
+
+/* ///////////////////Home/////////////////////////// */
+.button-home {
+  border: 2px solid var(--main-color);
+  background-color: var(--main-color);
+  color: #FFFFFF;
+  transition: all 0.4s;
+}
+
+.button-home:hover {
+  border: 2px solid var(--secondary-color);
+  background-color: #3393ff;
+  color: #FFFFFF;
+}
+
+.c-item-1 {
+  background-image: linear-gradient(rgba(0, 120, 255, 0.4), rgba(0, 120, 255, 0.4)), url("../images/bg_1.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: top;
+  padding: 160px 0;
+}
+
+.c-item-2 {
+  background-image: linear-gradient(rgba(0, 120, 255, 0.4), rgba(0, 120, 255, 0.4)), url("../images/image_1.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: top;
+  padding: 160px 0;
+}
+
+.img-circle img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.carousel-indicators [data-bs-target] {
+  text-indent: 0;
+  padding-bottom: 50px;
+  margin: 0%;
+}
+
+.home-student {
+  background-image: linear-gradient(rgba(0, 119, 255, 0.4), rgba(0, 119, 255, 0.4)), url("../images/slider_background.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  padding: 160px 0;
+}
+
+/* ////////////////////Courses////////////////////////// */
+.blog-content {
+  border: 1px solid #D2D2D2;
+}
+
+.blog-footer {
+  border-bottom: 1px solid #D2D2D2;
+  border-left: 1px solid #D2D2D2;
+  border-right: 1px solid #D2D2D2;
+}
+
+.badge {
+  width: 65px;
+  height: 25px;
+  padding-top: 6px;
+  background-color: var(--main-color);
+  transition: all 0.4s;
+  border: 2px solid transparent;
+}
+
+.badge:hover {
+  width: 70px;
+  height: 30px;
+  cursor: pointer;
+  border: 2px solid var(--secondary-color);
+
+}
+
+.text-end {
+  font-size: 14.5px;
+}
+
+.text-middle {
+  font-size: 11px;
+}
+
+.header-adj1 {
+  position: relative;
+}
+
+.header-adj1::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 600px;
+  width: 34px;
+  height: 4px;
+  background-color: var(--main-color);
+}
+
+.header-adj2 {
+  position: relative;
+}
+
+.header-adj2::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 500px;
+  width: 300px;
+  height: 4px;
+  background-color: var(--main-color);
+}
+
+.w-fixed2 {
+  width: 37px;
+}
+
+/* /////////////view////////////////// */
+.crs {
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.view {
+  background-image: linear-gradient(rgba(0, 120, 255, 0.4), rgba(0, 120, 255, 0.4)), url("../images/bokk.jpeg");
+  color: black;
+  /* default text color */
+}
+
+.enroll {
+  background-image: linear-gradient(rgba(35, 124, 114, 0.777), rgba(0, 0, 0, 0.773)), url("../images/bokk.jpeg");
+  color: white;
+  /* text color for enroll */
+}
+
+
+.class {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.777), rgba(0, 0, 0, 0.773)), url("../images/books-2.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.final {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.777), rgba(0, 0, 0, 0.773)), url("../images/hero-bg.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  color: white;
+}
+
+.grades {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.777), rgba(0, 0, 0, 0.773)), url("../images/stud.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.admin {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.777), rgba(0, 0, 0, 0.773)), url("../images/admin.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  padding: 160px 0;
+}
+
+.quizes {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.777), rgba(60, 35, 13, 0.773)), url("../images/milestones_background.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  color: white;
+}
+
+
+
+.bo {
+  border-right: 2px solid black;
+}
+
+.bo-b {
+  border-bottom: 2px solid black;
+}
+
+/* /////////////////////////////Contact//////////////////// */
+.btn-contact {
+  background-color: var(--main-color);
+  color: #FFFFFF;
+  padding: 8px 18px;
+  transition: all 0.5s;
+  border: 3.5px solid white;
+}
+
+.btn-contact:hover {
+  border: 3.5px solid #CDE1F8;
+  background-color: #3393ff;
+  color: #FFFFFF;
+}
+
+.form-select {
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.w-15 {
+  width: 15%;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.dropdown-content label {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 10px solid black;
+  display: inline-block;
+}
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid black;
+  display: inline-block;
+}
+
+.pagination-container {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.pagination-container .pagination {
+  display: inline-block;
+}
+
+.pagination-container .pagination li {
+  display: inline;
+  margin: 0 5px;
+}
+
+.pagination-container .pagination li a {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.pagination-container .pagination li a:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.pagination-container .pagination li.active a {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}

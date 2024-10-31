@@ -1,0 +1,187 @@
+<nav ng-if="!identity.email"  class="navbar navbar-expand-lg nav-bg position-sticky top-0 z-3 text-secondary p-0 pt-0" id="navv">
+  <div class="container-fluid">
+    <a class="navbar-brand  text-secondary nav-title ps-4  fw-medium p-2 pt-3" ng-href="/">
+      <img class="w-fixed text-black" src="/assets/images/university.gif" alt="logo">
+      <span class=" position-absolute text-uppercase" style="top:35px;">
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse pt-2" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto pe-4">
+
+        <li class="nav-item dropdown">
+          <a class="nav-link1 text-decoration-none d-block dropdown-toggle text-uppercase  text-secondary ps-3"
+            href="#courses" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Courses
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item text-capitalize fs-small fw-semibold text-muted" ng-href="/cs_courses">Computer
+                Science
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link  text-uppercase  text-secondary text-bold ps-3 me-5" ng-href="/login">LOGIN</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link  text-uppercase  text-secondary text-bold ps-3 me-5" ng-href="/home">home</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<nav ng-if="identity.role == 'admin'" class="navbar navbar-expand-lg nav-bg position-sticky" id="navv">
+  <div class="container-fluid">
+    <a class="navbar-brand  text-secondary nav-title ps-4  fw-medium p-2 pt-3" ng-href="/"><img class="w-fixed text-black"
+        src="/assets/images/university.gif" alt="logo"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse pt-2" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto pe-4">
+        <li class="nav-item ">
+          <a class="nav-link1 text-decoration-none d-block text-uppercase  text-secondary ps-3"
+            bg-href="/department" role="button" aria-expanded="false">
+            department
+          </a>
+
+        <li class="nav-item">
+          <a class="nav-link1 text-decoration-none d-block text-uppercase  text-secondary ps-3"
+            ng-href="/course" role="button" aria-expanded="false">
+            course
+          </a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link1 text-decoration-none d-block dropdown-toggle text-uppercase  text-secondary ps-3"
+            href="#professor" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            professor
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item text-capitalize fs-small fw-semibold text-muted" href="professor/add.php">Add
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item text-capitalize fs-small fw-semibold text-muted" href="professor/view.php">View
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link1 text-decoration-none d-block dropdown-toggle text-uppercase  text-secondary ps-3"
+            href="#student" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            student
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item text-capitalize fs-small fw-semibold text-muted" href="student/add.php">Add
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item text-capitalize fs-small fw-semibold text-muted" href="student/view.php">View</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown student-s">
+          <a class="nav-link1 text-decoration-none d-block dropdown-toggle text-uppercase  text-secondary ps-3"
+            href="#courses" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Facilities
+          </a>
+          <ul class="dropdown-menu">
+
+            <li class="nav-item dropend">
+              <a class=" fw-bold ms-2 nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Building
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item text-capitalize fs-small fw-semibold text-muted" href="building/add.php">Add
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item text-capitalize fs-small fw-semibold text-muted" href="building/view.php">View
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropend">
+              <a class=" fw-bold ms-2 nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                room
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item text-capitalize fs-small fw-semibold text-muted" href="room/add.php">Add
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item text-capitalize fs-small fw-semibold text-muted" href="room/view.php">View
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link1 text-decoration-none d-block dropdown-toggle text-uppercase  text-secondary ps-3"
+            href="#semester" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            semester
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item text-capitalize fs-small fw-semibold text-muted" href="semester/add.php">Add
+              </a>
+            </li>
+
+            <li>
+              <a class="dropdown-item text-capitalize fs-small fw-semibold text-muted"
+                href="semester/course-assign.php">assign courses
+              </a>
+            </li>
+
+            <li>
+              <a class="dropdown-item text-capitalize fs-small fw-semibold text-muted" href="semester/view.php">view
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link1 text-decoration-none d-block dropdown-toggle text-uppercase  text-secondary ps-3"
+            href="#schedule" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            schedule
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item text-capitalize fs-small fw-semibold text-muted" href="schedule/add.php">
+                Add
+              </a>
+            </li>
+
+            <li>
+              <a class="dropdown-item text-capitalize fs-small fw-semibold text-muted" href="schedule/view.php">
+                View
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav> 
